@@ -1,123 +1,181 @@
-h2. Redcase - Redmine Test managment plugin
+<div>
+  <a name="Redcase-Redmine-Test-managment-plugin"></a>
+<h1 >Redcase - Redmine Test managment plugin<a href="#Redcase-Redmine-Test-managment-plugin" class="wiki-anchor">&para;</a></h1>
 
-Redcase is a test case management plug-in for the Redmine issues tracker. Redcase allows you to create, manage, and execute test cases, group them into test suites, link theim with the native Redmine issues, work with multiple test environments, create reports, and more.
-Test cases in Redcase are implemented as native Redmine issues, therefore you can effectively manage test cases by changing their states from creation until obsolescence.
-Also, you can use the Redmine queries (in the Issues tab) to search through test cases. On the other hand, Redcase groups all test cases by test suites in a tree structrure so that you can arrange and access them in the convenient way.
-The current Redcase release is tested on Redmine 0.9.3 for these browsers:
-• FireFox 3.5
-• Opera 10.5
 
-h2. Setup
+Redcase is a test case management plug-in for the Redmine issues tracker. Redcase allows you to create, manage, and execute test cases, group them into test suites, link theim with the native Redmine issues, work with multiple test environments, create reports, and more.<br />Test cases in Redcase are implemented as native Redmine issues, therefore you can effectively manage test cases by changing their states from creation until obsolescence.<br />Also, you can use the Redmine queries (in the Issues tab) to search through test cases. On the other hand, Redcase groups all test cases by test suites in a tree structrure so that you can arrange and access them in the convenient way.<br />The current Redcase release is tested on Redmine 0.9.3 for these browsers:
+	<ul>
+	<li>FireFox 3.5</li>
+		<li>Opera 10.5</li>
+	</ul>
 
-h3. Installation
 
-Redcase is installed like ordinary Redmine's plug-in. For detailed information, refer to:
-http://www.redmine.org/wiki/redmine/Plugins. After installation is finished, the Test cases tab appears along with other Redmine's tabs. There are three sub-tabs in this tab: Management, Execution, Report. Also the installer will create a new tracker Test case in your Redmine. The tracker is an issue type like Bug or Feature. The Test case will have its owin workflow, which is described below.
+	<a name="Setup"></a>
+<h2 >Setup<a href="#Setup" class="wiki-anchor">&para;</a></h2>
 
-h3. Adjusting Redmine Settings
+
+	<a name="Installation"></a>
+<h3 >Installation<a href="#Installation" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Redcase is installed like ordinary Redmine's plug-in. For detailed information, refer to:<br /><a class="external" href="http://www.redmine.org/wiki/redmine/Plugins">http://www.redmine.org/wiki/redmine/Plugins</a>. After installation is finished, the Test cases tab appears along with other Redmine's tabs. There are three sub-tabs in this tab: Management, Execution, Report. Also the installer will create a new tracker Test case in your Redmine. The tracker is an issue type like Bug or Feature. The Test case will have its owin workflow, which is described below.</p>
+
+
+	<a name="Adjusting-Redmine-Settings"></a>
+<h3 >Adjusting Redmine Settings<a href="#Adjusting-Redmine-Settings" class="wiki-anchor">&para;</a></h3>
+
 
 After Redcase is installed, make some adjustments to your Redmine:
-• For each project where you want to work with test cases, enable the Test case tracker - go to the project settings, select the Information tab and tick the corresponding check-box in the Trackers area.
-• Set permissions for roles that work with test cases or execution results of test cases - in the Redmine Administration page, choose Roles and Permissions and then for each role, select View test cases or/and Edit test cases permissions. If neither of these permissions is set for a role, members with this role will not have the Test cases tab in their interface.
-• Edit workfolow of the Test case tracker for related roles - in the Redmine Administration page, choose Workflow and then edit workflow for each role as necessary.
+	<ul>
+	<li>For each project where you want to work with test cases, enable the Test case tracker - go to the project settings, select the Information tab and tick the corresponding check-box in the Trackers area.</li>
+		<li>Set permissions for roles that work with test cases or execution results of test cases - in the Redmine Administration page, choose Roles and Permissions and then for each role, select View test cases or/and Edit test cases permissions. If neither of these permissions is set for a role, members with this role will not have the Test cases tab in their interface.</li>
+		<li>Edit workfolow of the Test case tracker for related roles - in the Redmine Administration page, choose Workflow and then edit workflow for each role as necessary.</li>
+	</ul>
 
-h2. Test case management
 
-h3. Creating new test case
+	<a name="Test-case-management"></a>
+<h2 >Test case management<a href="#Test-case-management" class="wiki-anchor">&para;</a></h2>
 
-A test case is created in the same way as other Redmine issues, in the New issue tab:
 
-1. Select Test case in the Tracker field,
-2. Type in the test case name in the Subject field;
-3. Describes the steps of test case in the Description field;
-case in the Description field;
-4. Fill in other fields as needed;
-5. Click Create when finished.
+	<a name="Creating-new-test-case"></a>
+<h3 >Creating new test case<a href="#Creating-new-test-case" class="wiki-anchor">&para;</a></h3>
 
-By default the newly created test case will be added to the .Unsorted test suite. To view the the test case, open the Test cases tab, then select Management and check the test case tree.
-Test cases are grouped by test suites. Test suites are user-defined categories, except for .Obsolete and .Unsorted. The newly created test cases appear in the Unsorted category, the Obsolete category includes test cases that were moved to the Obsolete state.
 
-h3. Tracking test case
+	<p>A test case is created in the same way as other Redmine issues, in the New issue tab:</p>
+
+
+	<ol>
+	<li>Select Test case in the Tracker field,</li>
+		<li>Type in the test case name in the Subject field;</li>
+		<li>Describes the steps of test case in the Description field;case in the Description field;</li>
+		<li>Fill in other fields as needed;</li>
+		<li>Click Create when finished.</li>
+	</ol>
+
+
+	<p>By default the newly created test case will be added to the .Unsorted test suite. To view the the test case, open the Test cases tab, then select Management and check the test case tree.<br />Test cases are grouped by test suites. Test suites are user-defined categories, except for .Obsolete and .Unsorted. The newly created test cases appear in the Unsorted category, the Obsolete category includes test cases that were moved to the Obsolete state.</p>
+
+
+	<a name="Tracking-test-case"></a>
+<h3 >Tracking test case<a href="#Tracking-test-case" class="wiki-anchor">&para;</a></h3>
+
 
 As a Redmine item, test case has several states that change during its life cycle and define its workflow. Be default, there are three states:
-• New - this state is for newly created test cases;
-• In Progress - a test case is moved to this state by a test lead after the test case is verified, this is the only state where the test case can be executed;
-• Obsolete - this state is for obsolete test cases that should not be run;
+	<ul>
+	<li>New - this state is for newly created test cases;</li>
+		<li>In Progress - a test case is moved to this state by a test lead after the test case is verified, this is the only state where the test case can be executed;</li>
+		<li>Obsolete - this state is for obsolete test cases that should not be run;</li>
+	</ul>
 
-All these states are added to your Redmine when you install the plug-in. If necessary, you can add other states in the same way as for other Redmine issue types. Note: Do not change the In Progress state as it is recognized by the plug-in in a special way.
 
-h3. Managing test suites
+	<p>All these states are added to your Redmine when you install the plug-in. If necessary, you can add other states in the same way as for other Redmine issue types. Note: Do not change the In Progress state as it is recognized by the plug-in in a special way.</p>
 
-Test suites of your project can be found by opening the Test cases tab, and then selecting Management. All test suites of the project are grouped in a tree structre so that any test suite can include test cases and/or other test suites. Test suites are shown
-as expandable categories under the Root category. As it was mentioned above, there are two default suites in the newly created project - .Obsolete and .Unsorted; users cannot delete these suites.
+
+	<a name="Managing-test-suites"></a>
+<h3 >Managing test suites<a href="#Managing-test-suites" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Test suites of your project can be found by opening the Test cases tab, and then selecting Management. All test suites of the project are grouped in a tree structre so that any test suite can include test cases and/or other test suites. Test suites are shown<br />as expandable categories under the Root category. As it was mentioned above, there are two default suites in the newly created project - .Obsolete and .Unsorted; users cannot delete these suites.</p>
+
 
 To create a new test suite:
-1. Right-click on any test suite in the tree;
-2. Select New in the shortcut menu;
-3. In the appeared dialog specify the name for the suite and click OK;
+	<ol>
+	<li>Right-click on any test suite in the tree;</li>
+		<li>Select New in the shortcut menu;</li>
+		<li>In the appeared dialog specify the name for the suite and click OK;</li>
+	</ol>
 
-The new test suite will be added as a child category of the node where you clicked, To delete a test suite, right-click on it and select Delete. If the deleted test suite contained any test cases, these will be moved to the .Unsorted suite. To group test suites, you can move them by drag-n-drop as needed except moving test suites into the .Obsolete node.
 
-h3. Moving test cases between suites
+	<p>The new test suite will be added as a child category of the node where you clicked, To delete a test suite, right-click on it and select Delete. If the deleted test suite contained any test cases, these will be moved to the .Unsorted suite. To group test suites, you can move them by drag-n-drop as needed except moving test suites into the .Obsolete node.</p>
 
-You can move test cases between test suites of your project by drag-and-drop. Remember, that all newly created test cases can be found in the .Unsorted suite. All test cases whose state changes to Obsolete are automatically moved into the .Obsolete suite.
-Note: you cannot move test cases to or from the .Obsolete suite by drag-n-drop.
 
-h3. Copying tests to another project
+	<a name="Moving-test-cases-between-suites"></a>
+<h3 >Moving test cases between suites<a href="#Moving-test-cases-between-suites" class="wiki-anchor">&para;</a></h3>
 
-You can copy test cases from the current project to another project with the shortcut menu command in the test suite tree. Select a test case that you want to copy, rightclick at it and choose Copy to > [project].
 
-h3. Working with Execution lists
+	<p>You can move test cases between test suites of your project by drag-and-drop. Remember, that all newly created test cases can be found in the .Unsorted suite. All test cases whose state changes to Obsolete are automatically moved into the .Obsolete suite.<br />Note: you cannot move test cases to or from the .Obsolete suite by drag-n-drop.</p>
 
-Execution lists allow grouping test cases for execution. In your project, you can create several execution lists for varioius types of tests that will contain different sets of test cases, e.g. for stress testing, for testing usability, etc.
-You can view, add, delete, and modify execution lists in the Management area of the Test cases tab. There is a default empty execution list named Root. The drop-down selector lists all execution lists defined in your project; you can select a list to diplay its contents. When a list is selected, its name is shown in the text-box below. To rename the selected execution list, type a new name for it and click Save . To remove the selected execution list, click Delete . To add a new execution list, type a name for it and click Add . Note: When you have only one execution list in your project, you cannot remove it. The selected execution list is displayed as a tree. To the root of this tree, you can add new categories sub-categories and place test cases into any of them. To add a test case to the execution list, drag-n-drop it from the test suite tree. Only test cases in an executable state can be added to the execution list. The default executable state is In Progress state. Test cases in New and Obsolete states cannot
-be added to execution lists. If you change a state of a test case into non-executable (e.g. the test case is not used anymore and you changed its state into Obsolete) this test case is removed from all execution lists automatically.
 
-h3. Managing test environments
+	<a name="Copying-tests-to-another-project"></a>
+<h3 >Copying tests to another project<a href="#Copying-tests-to-another-project" class="wiki-anchor">&para;</a></h3>
 
-Test environmets allow storing descriptions for various environments where your project is tested. For example, if you test an application that can work under Windows, Linux, and Mac, you can create three test environments. This allows having information about
-the environent in the execution results.
-You can view, add, delete, and modify environments in the Management area of the Test cases tab. There is a default environment named Default. The drop-down selector lists all environments defined in your project; you can select an environment to diplay its
-description. When an environment is selected, its name is shown in the text-box below. To rename the selected environment, type a new name for it and click Save . To remove the selected environment, click Delete . To add a new environment, type a name for it and click Add . Note: When you have only one environment in your project, you cannot remove it.
 
-h2. Test case execution
+	<p>You can copy test cases from the current project to another project with the shortcut menu command in the test suite tree. Select a test case that you want to copy, rightclick at it and choose Copy to > [project].</p>
 
-Everything related to test case execution can be found in the Execution area within the Test cases tab. The left part of the area displays the execution list, the right part displays details of the selected test case, the bottom part displays the table with execution results.
 
-h3. Selecting execution options
+	<a name="Working-with-Execution-lists"></a>
+<h3 >Working with Execution lists<a href="#Working-with-Execution-lists" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Execution lists allow grouping test cases for execution. In your project, you can create several execution lists for varioius types of tests that will contain different sets of test cases, e.g. for stress testing, for testing usability, etc.<br />You can view, add, delete, and modify execution lists in the Management area of the Test cases tab. There is a default empty execution list named Root. The drop-down selector lists all execution lists defined in your project; you can select a list to diplay its contents. When a list is selected, its name is shown in the text-box below. To rename the selected execution list, type a new name for it and click Save . To remove the selected execution list, click Delete . To add a new execution list, type a name for it and click Add . Note: When you have only one execution list in your project, you cannot remove it. The selected execution list is displayed as a tree. To the root of this tree, you can add new categories sub-categories and place test cases into any of them. To add a test case to the execution list, drag-n-drop it from the test suite tree. Only test cases in an executable state can be added to the execution list. The default executable state is In Progress state. Test cases in New and Obsolete states cannot<br />be added to execution lists. If you change a state of a test case into non-executable (e.g. the test case is not used anymore and you changed its state into Obsolete) this test case is removed from all execution lists automatically.</p>
+
+
+	<a name="Managing-test-environments"></a>
+<h3 >Managing test environments<a href="#Managing-test-environments" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Test environmets allow storing descriptions for various environments where your project is tested. For example, if you test an application that can work under Windows, Linux, and Mac, you can create three test environments. This allows having information about<br />the environent in the execution results.<br />You can view, add, delete, and modify environments in the Management area of the Test cases tab. There is a default environment named Default. The drop-down selector lists all environments defined in your project; you can select an environment to diplay its<br />description. When an environment is selected, its name is shown in the text-box below. To rename the selected environment, type a new name for it and click Save . To remove the selected environment, click Delete . To add a new environment, type a name for it and click Add . Note: When you have only one environment in your project, you cannot remove it.</p>
+
+
+	<a name="Test-case-execution"></a>
+<h2 >Test case execution<a href="#Test-case-execution" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Everything related to test case execution can be found in the Execution area within the Test cases tab. The left part of the area displays the execution list, the right part displays details of the selected test case, the bottom part displays the table with execution results.</p>
+
+
+	<a name="Selecting-execution-options"></a>
+<h3 >Selecting execution options<a href="#Selecting-execution-options" class="wiki-anchor">&para;</a></h3>
+
 
 When you are ready to execute your test cases, select the suitable options for your test.
-• Execution list - if there is no suitable execution list for your test, go to the Management area and create a new list or add necessary test cases to one of the existing lists (see Working with Execution lists).
-• Version - current version of the software under test.
-• Environment - environment where your project is tested. If there is no suitable environment for your test, go to the Management area and create a new environment (see Managing test environments).
-The selected execution list appears in the left part of the area and you can begin to execute the test cases.
-Note: If no versions is defined in your project, the Execution and Report tabs are not displayed. To display these tabs, define at least one version - select Settings > Versions and click New version.
+	<ul>
+	<li>Execution list - if there is no suitable execution list for your test, go to the Management area and create a new list or add necessary test cases to one of the existing lists (see Working with Execution lists).</li>
+		<li>Version - current version of the software under test.</li>
+		<li>Environment - environment where your project is tested. If there is no suitable environment for your test, go to the Management area and create a new environment (see Managing test environments).<br />The selected execution list appears in the left part of the area and you can begin to execute the test cases.<br />Note: If no versions is defined in your project, the Execution and Report tabs are not displayed. To display these tabs, define at least one version - select Settings > Versions and click New version.</li>
+	</ul>
 
-h3. Executing test case
 
-Expand the selected execution list and click on a test case that you are going to execute:  its description (execution steps and expected result) will appear in the right part of the Execution area.
-After you perform the execution steps upon the tested software, select the execution result. There are 4 results available:
-• Passed - the result observed on the software corresponds to the expected result in the test case description.
-• Failed - the result observed on the software differs from the expected result in the test case description.
-• Not Available - the feature that the test case is applied to is not available in the current configuration or test environment. Note that if the feature is not available anymore in all configurations of the software, you should move all related test cases to the Obsolete state.
-• Blocked - execution of the test case is blocked by some defect or malfunction of the software.
-Optionally, you can provide a comment to the execution of the test case. It may be especially useful for results other than Passed. Click Save to save the execution result and the comment in the database. Before applying the reult, make sure that the correct version and environment is selected. After saving test result, the next test case in the tree will be selected automatically.
+	<a name="Executing-test-case"></a>
+<h3 >Executing test case<a href="#Executing-test-case" class="wiki-anchor">&para;</a></h3>
 
-h2. Results and reporting
 
-Redcase provides convenient view of test execution results as well as reporting features. These can be found in the Report area within the Test cases tab. The left part of the area displays the pie-chart of execution results, the right part displays the table with execution results.
+Expand the selected execution list and click on a test case that you are going to execute:  its description (execution steps and expected result) will appear in the right part of the Execution area.<br />After you perform the execution steps upon the tested software, select the execution result. There are 4 results available:
+	<ul>
+	<li>Passed - the result observed on the software corresponds to the expected result in the test case description.</li>
+		<li>Failed - the result observed on the software differs from the expected result in the test case description.</li>
+		<li>Not Available - the feature that the test case is applied to is not available in the current configuration or test environment. Note that if the feature is not available anymore in all configurations of the software, you  should move all related test cases to the Obsolete state.</li>
+		<li>Blocked - execution of the test case is blocked by some defect or malfunction of the software.<br />Optionally, you can provide a comment to the execution of the test case. It may be especially useful for results other than Passed. Click Save to save the execution result and the comment in the database. Before applying the result, make sure that the correct version and environment is selected. After saving test result, the next test case in the tree will be selected automatically.</li>
+	</ul>
 
-h3. Execution results by version
 
-To view execution results, select the version of the software whose resuls you need to see and the enviroment where it was tested, The pie-chart is updated as soon as you make selection.
-In the right part of the Report area the results for the selected version/environment are shown in the table view with details - you can see ID and name of the test case, execution date, result, and executor name. If a test case has some comments on this
-version/environment, you can click on the information sign in rightmost column to show and hide the comments. The Results column has a filter in its header; with this filter you can sort out the entries with particular result value. Also, you can generate a report with execution results for the selected version/ environment of the software. Click Report generate and download the report. The report
-is created as CSV file.
+	<a name="Results-and-reporting"></a>
+<h2 >Results and reporting<a href="#Results-and-reporting" class="wiki-anchor">&para;</a></h2>
 
-h3. View test case execution results chart
 
-You have to choose particular build under test version and test environment to show test case executon . For viewings comment you have to click on the "i" icon in the report table.Click on "Full report" button to download csv file with matrix "test cases" / "results" for all versions and environments
+	<p>Redcase provides convenient view of test execution results as well as reporting features. These can be found in the Report area within the Test cases tab. The left part of the area displays the pie-chart of execution results, the right part displays the table with execution results.</p>
 
-h3. Generating test specification
 
-Click on "Test specification" button to download rtf file with all test cases descriptions.
+	<a name="Execution-results-by-version"></a>
+<h3 >Execution results by version<a href="#Execution-results-by-version" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>To view execution results, select the version of the software whose resuls you need to see and the enviroment where it was tested, The pie-chart is updated as soon as you make selection.<br />In the right part of the Report area the results for the selected version/environment are shown in the table view with details - you can see ID and name of the test case, execution date, result, and executor name. If a test case has some comments on this<br />version/environment, you can click on the information sign in rightmost column to show and hide the comments. The Results column has a filter in its header; with this filter you can sort out the entries with particular result value. Also, you can generate a report with execution results for the selected version/ environment of the software. Click Report generate and download the report. The report<br />is created as CSV file.</p>
+
+
+	<a name="View-test-case-execution-results-chart"></a>
+<h3 >View test case execution results chart<a href="#View-test-case-execution-results-chart" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>You have to choose particular build under test version and test environment to show test case executon . For viewings comment you have to click on the "i" icon in the report table.Click on "Full report" button to download csv file with matrix "test cases" / "results" for all versions and environments</p>
+
+
+	<a name="Generating-test-specification"></a>
+<h3 >Generating test specification<a href="#Generating-test-specification" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Click on "Test specification" button to download rtf file with all test cases descriptions.</p>
+
+
+	<p></p>
+</div>
