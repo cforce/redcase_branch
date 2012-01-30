@@ -73,16 +73,16 @@
 
 <% html_title "Test cases" %>
 
-<h2>Test cases
-    <!-- Temporary plugin version output (only for testing) -->
+<h2><%=h l(:label_test_cases) %>
+    <!-- Temporary plugin version output (only for testing)
     <span style="color: gray">
         (Plugin version: <%= Redmine::Plugin.all.detect { |x| x.name == 'Redcase' }.version %>)
-    </span>
+    </span> -->
 </h2>
 
 <% if @version.nil? then %>
     <div style="color: #bbbbbb; text-align: center">
-        (There is no <b>version</b> for this project. If you need to execute test cases please create some one...)
+	<%=h l(:label_noversion_msg) %>    
     </div>
 <% end %>
 

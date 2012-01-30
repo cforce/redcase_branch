@@ -1,11 +1,11 @@
 # German strings go here for Rails i18n
 
 de:
-  label_test_case_management     : "Management"
+  label_test_case_management     : "Verwaltung"
   label_test_case_execution      : "Durchf&uuml;hrung"
   label_test_case_report         : "Auswertung"
-  label_test_suites              : "Testreihen"
-  label_execution_suite          : "Ausf&uuml;hrungsfolgen"
+  label_test_suites              : "Test Suite"
+  label_execution_suite          : "Testabfolge"
   label_environment              : "Testumgebung"
   label_version                  : "Version"
   label_execution_info           : "Ausf&uuml;hrungsbeschreibung"
@@ -23,5 +23,6 @@ de:
   label_full_report              : "Vollst&auml;ger Bericht"
   label_test_case_specification  : "Testfallspezifikation"
   label_button_save              : "Speichern"
-
+  label_test_cases               : "Testfälle"
+  
 
