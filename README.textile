@@ -1,3 +1,7 @@
+This project i sno longer maintained
+This project i overruled by feature, stability and activity from redmine impasse
+See https://github.com/kawasima/redmine_impasse/
+
 h1. Redcase - Redmine Test managment plugin
 
 Redcase is a test case management plug-in for the Redmine issues tracker. Redcase allows you to create, manage, and execute test cases, group them into test suites, link theim with the native Redmine issues, work with multiple test environments, create reports, and more.
