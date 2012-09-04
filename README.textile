@@ -1,5 +1,4 @@
-This project i sno longer maintained
-This project i overruled by feature, stability and activity from redmine impasse
+h1. This project is no longer maintained. This project i overruled by feature, stability and activity from redmine impasse
 See https://github.com/kawasima/redmine_impasse/
 
 h1. Redcase - Redmine Test managment plugin
